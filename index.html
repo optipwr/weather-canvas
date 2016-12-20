@@ -16,8 +16,25 @@
 
 </head>
 <body>
+	<div class="col-sm-6 col-sm-offset-3">
+		<form id="weather-form">
+			<label>Please enter location to search</label>
+			<input type="text" id="location" placeholder="Location">
+		</form>
 
-	
+		<div id="currTemp">
+			<!-- empty -->
+		</div>
+		<div class="canvas-wrapper">
+			<canvas id="weather-canvas">
+				<!-- Put the temperature in here -->
+			</canvas>
+			<div class="degrees"></div>
+			<div class="weather-description"></div>
+		</div>
+		<div class="weather-week"></div>
+	</div>
+
 
 </body>
 </html>

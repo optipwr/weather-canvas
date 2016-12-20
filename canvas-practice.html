@@ -18,6 +18,23 @@
 	</canvas>
 
 	<script type="text/javascript">
+
+	// function Ball(x,y, red, green, blue, rad, canvasX = 500, canvasY = 500, xSpeed = 1, ySpeed = 1){
+	// 	ySpeed = 1;
+	// 	this.x = x;
+	// 	this.y = y;
+	// 	this.r = red;
+	// 	this.g = green;
+	// 	this.b = blue;
+	// 	this.rad = 50;
+	// 	this.canvasX = canvasX;
+	// 	this.canvasY = canvasY;
+	// 	this.endArc = Math.PI * 2;
+	// 	this.xDirection = 1;
+	// 	this.yDirection = 1;
+	// 	this.xSpeed = xSpeed;
+	// 	this.ySpeed = ySpeed;
+	// }
 		
 	var canvas = document.getElementById('the-canvas');
 	var context = canvas.getContext('2d');
@@ -69,24 +86,24 @@
 		x += ballSpeed*xDirection;
 		y += ballSpeed*yDirection;
 
-		if(x === 460){
+		if(x >= 460){
 			xDirection = -1
 		}
-		if(x === 40){
+		if(x <= 40){
 			xDirection = +1
 		}
-		if(y === 460){
+		if(y >= 460){
 			yDirection = -1
 		}
-		if(y === 40){
+		if(y <= 40){
 			yDirection = +1
 		}
 
 		// radius += 1;
 		endArc += 1;
-		r+=2;
-		g+=2;
-		b+=4;
+		r = Math.floor(Math.random()*50);
+		g = Math.floor(Math.random()*150);
+		b = Math.floor(Math.random()*150);
 
 	}
 

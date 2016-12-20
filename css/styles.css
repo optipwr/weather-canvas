@@ -1,0 +1,38 @@
+.canvas-wrapper {
+	position: absolute;
+}
+
+canvas{
+	position: absolute;
+	left: 30px;
+}
+
+.degrees{
+	position: absolute;
+	top: 70px;
+	left: 120px;
+	width: 130px;
+	text-align: center;
+}
+
+.weather-description{
+	position: absolute;
+	top: 82px;
+	left: 120px;
+	width: 130px;
+	text-align: center;
+}
+
+.weather-week{
+	position: absolute;
+	left: 60px;
+	top: 230px;
+}
+
+.weather-week div{
+	display: inline-block;
+	border: 1px solid black;
+	margin: 4px;
+	padding: 4px;
+	font-size: 10px;
+}
