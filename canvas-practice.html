@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css" media="screen">
+		#the-canvas{
+			border: black 5px solid;
+			margin: 20px;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<canvas id="the-canvas" height="500px" width="500px">
+		<!-- A place for us to draw! -->
+	</canvas>
+
+	<script type="text/javascript">
+		
+	var canvas = document.getElementById('the-canvas');
+	var context = canvas.getContext('2d');
+
+	context.strokeStyle = "#ff0000";
+	context.lineWidth = 10;
+	// move the pen to x=100, y=100
+	// context.moveTo(100, 100);
+	// // actually create but not draw a line
+	// context.lineTo(200, 200);
+	// context.lineTo(300, 100);
+	// context.lineTo(100, 200);
+	// context.lineTo(300, 150);
+	// context.lineTo(100, 100);
+	// // draw visible line
+	// context.stroke();
+
+	// context.fillStyle = "#0000ff";
+	// context.beginPath();
+	// context.arc(250,250,50,0*Math.PI, *Math.PI);
+	// context.arc(150,250,50,0*Math.PI, 2*Math.PI);
+	// context.fill();
+	// context.stroke();
+
+	// context.rect(300,20,100,100);
+	// context.stroke();
+	var r = 0;
+	var g = 0;
+	var b = 0;
+	var x = 60;
+	var y = 0;
+	var radius = 40;
+	var endArc = 0;
+	var contactBottom = false;
+	var contactRight = false;
+	var contactLeft = false;
+	var contactTop = false;
+	var xDirection = 1;
+	var yDirection = 1;
+	var ballSpeed = 10;
+
+	function draw(){
+		context.fillStyle = '#'+r+g+b;
+		context.clearRect(0,0,500,500);
+		context.beginPath();
+		context.arc(x, y, radius, 0*Math.PI, Math.PI * endArc);
+		context.fill();
+
+		x += ballSpeed*xDirection;
+		y += ballSpeed*yDirection;
+
+		if(x === 460){
+			xDirection = -1
+		}
+		if(x === 40){
+			xDirection = +1
+		}
+		if(y === 460){
+			yDirection = -1
+		}
+		if(y === 40){
+			yDirection = +1
+		}
+
+		// radius += 1;
+		endArc += 1;
+		r+=2;
+		g+=2;
+		b+=4;
+
+	}
+
+	var ballInterval = setInterval(draw, 20);
+
+	</script>
+
+</body>
+</html>
