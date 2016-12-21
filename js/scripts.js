@@ -12,7 +12,7 @@ $(document).ready(function(){
 			var name = weatherData.name;
 			var icon = weatherData.weather[0].icon + '.png';
 			var desc = weatherData.weather[0].description;
-			$('#currTemp').html("<img src='http://openweathermap.org/img/w/"+ icon +"'>The temperature in " + name + " is currently " + currTemp + "&deg;");
+			$('#currTemp').html("<img src='http://openweathermap.org/img/w/"+ icon +"'>Current temperature in " + name + " is " + currTemp + "&deg;");
 			$('.weather-description').html(desc);
 			var canvas = $('#weather-canvas');
 			var context = canvas[0].getContext('2d');
@@ -87,9 +87,32 @@ $(document).ready(function(){
 			for(let i = 1; i < 6; i++){
 				var weatherDate = new Date(weatherDataFive.list[i].dt * 1000);
 				var date = weatherDate.getDate();
+				var days = weatherDate.getDay();
+				var dayOfWeek;
+				if(days === 0){
+					dayOfWeek = "Sun: "
+				}
+				else if(days === 1){
+					dayOfWeek = "Mon: "
+				}
+				else if(days === 2){
+					dayOfWeek = "Tue: "
+				}
+				else if(days === 3){
+					dayOfWeek = "Wed: "
+				}
+				else if(days === 4){
+					dayOfWeek = "Thu: "
+				}
+				else if(days === 5){
+					dayOfWeek = "Fri: "
+				}
+				else if(days === 6){
+					dayOfWeek = "Sat: "
+				}
 				var min = weatherDataFive.list[i].temp.min;
 				var max = weatherDataFive.list[i].temp.max;
-				weekHTML += '<div>Date: ' + Math.floor(date) + '<br>Low: ' + Math.floor(min) + '<br>High: ' + Math.floor(max) + '</div>';
+				weekHTML += '<div>' + dayOfWeek + Math.floor(date) + '<br>Low: ' + Math.floor(min) + '<br>High: ' + Math.floor(max) + '</div>';
 			}
 			$('.weather-week').html(weekHTML);
 		});

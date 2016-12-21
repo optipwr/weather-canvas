@@ -1,26 +1,30 @@
 .canvas-wrapper {
 	position: absolute;
+	margin: auto;
 }
 
 canvas{
 	position: absolute;
-	left: 30px;
+	left: 40px;
+	margin: auto;
 }
 
 .degrees{
 	position: absolute;
-	top: 70px;
-	left: 120px;
+	top: 45px;
+	left: 135px;
 	width: 130px;
 	text-align: center;
+	font-size: 30px;
 }
 
 .weather-description{
 	position: absolute;
-	top: 82px;
-	left: 120px;
+	top: 75px;
+	left: 130px;
 	width: 130px;
 	text-align: center;
+	font-size: 30px;
 }
 
 .weather-week{
@@ -35,4 +39,26 @@ canvas{
 	margin: 4px;
 	padding: 4px;
 	font-size: 10px;
+	text-align: center;
+}
+
+#currTemp{
+	font-size: 18px;
+	text-align: center;
+}
+
+div{
+	margin: auto;
+}
+
+.wrapper{
+	margin-top: 40px;
+	width: 400px;
+	position: relative;
+	border: 1px solid black;
+	height: 300px;
+}
+
+#weather-form{
+	text-align: center;
 }
